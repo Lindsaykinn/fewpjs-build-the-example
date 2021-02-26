@@ -1,9 +1,26 @@
 // Defining text characters for the empty and full hearts for you to use later.
-const EMPTY_HEART = '♡'
-const FULL_HEART = '♥'
+const EMPTY_HEART = "♡"
+const FULL_HEART = "♥"
+let heartObjects = {"♥":"♡", "♡":"♥"};
+let heartColors = {"red": "", "":"red"};
 
 // Your JavaScript code goes here!
+let likeButton = document.getElementsByClassName("like");
 
+function likeCallback(e){ 
+    mimicServerCall("blahblah")
+    .then(function(serverMessage){
+      e.target.innerText = heartObjects[e.target.innerText];
+      e.target.style.color = heartColors[e.target.style.color]
+    })
+    .catch(function(error){
+      document.getElementById("modal").className = "";
+    })
+  }
+  for (let heart of likeButton){
+    heart.addEventListener("click", likeCallback);
+  }
+ 
 
 
 
@@ -22,4 +39,6 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
       }
     }, 300);
   });
+  
 }
+
