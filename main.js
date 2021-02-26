@@ -4,7 +4,10 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
-
+// document.addEventListener("DOMContentLoaded", function(){
+//   document.getElementById('modal').style.display = 'none'
+  
+// })
 
 
 //------------------------------------------------------------------------------
@@ -22,4 +25,6 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
       }
     }, 300);
   });
+  
 }
+
